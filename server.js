@@ -1,7 +1,8 @@
 const express    = require('express'),
       bodyParser = require('body-parser'),
       mongoose   = require('mongoose');
-      app        = express();   
+      app        = express();
+      db         = mongoose.connect('mongodb://localhost/swag-shop');   
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
