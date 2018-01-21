@@ -1,12 +1,16 @@
 const express    = require('express'),
       bodyParser = require('body-parser'),
+      mongoose   = require('mongoose');
       app        = express();   
 
-app.use(bodyPArser.json());
-app.use(bodyPArser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
-app.listen(3000, () => {
-    console.log('Swag shop is api is running!!!');
+const PORT = 3000;
+const APP_NAME = 'Swag Shop API'
+
+app.listen(PORT, () => {
+    console.log(`${APP_NAME} running on port ${PORT}...`);
 });
 
 app.get('/', (req, res) => {
