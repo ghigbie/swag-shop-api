@@ -4,6 +4,9 @@ const express    = require('express'),
       app        = express();
       db         = mongoose.connect('mongodb://localhost/swag-shop');   
 
+const Product  = require('./model.products'),
+      WishList = require('./model/whishlist');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
